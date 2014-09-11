@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CorgiTabs</title>
+    <script src="./jquery-2.1.1.min.js"></script>
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css"> -->
+  </head>
+
+  <body>
+    <ul class='tabs' data-content-tabs="#content-tabs">
+      <li><a class="active" href='#big'>big</a></li>
+      <li><a href='#small'>small</a></li>
+      <li><a href='#baby'>baby</a></li>
+    </ul>
+    <div id="content-tabs">
+      <div class="tab-pane active" id="big">
+        <p>You might find it surprising to hear that in general all dog breeds are good with children. Virtually all Rottweilers are gentle with children and never bite. Very rarely is a child seriously injured by a dog. But, for those parents who want to be extra safe we have removed the breeds that are most frequently involved in attacks from this list. (We, of course, are not saying that your child will never be attacked if you own one of these breeds, just that the chances of it happening are much lower because we've filtered out the breeds that have historically been involved in dog attacks.)
+        </p>
+      </div>
+      <div class="tab-pane" id="small">
+        <p>This is a list of the best guard dog breeds. A guard dog is a dog that prevents someone from entering your property. The reason these breeds are the best guard dogs is mostly because they look intimidating and scary and have potential to do damage to someone (people are scared of them!). In all honesty, a dog that has not undergone months of guard dog training will rarely do any damage or overwhelm an intruder with force. He'll most probably just bark and get in the intruders way. However, most intruders will be scared-off if they know that you own one of these dogs (especially one of the breeds at the top of the list, such as a Rottweiler or Doberman Pinscher). These guard dogs do an excellent job of scaring intruders away!    
+        </p>
+      </div>
+      <div class="tab-pane" id="baby">
+        <p>This is a list of hypoallergenic dogs. In truth, no dog is completely hypoallergenic. All dogs produce dander (microscopic skin flakes that can be inhaled and potentially irritate the nose and eyes or cause sneezing) and of course saliva. Dander and saliva are the main causes of allergic reactions in some people. However, because the breeds in this list are low shedding it's thought they may also produce less dander and are better for people with allergies to dander. If you have allergies you should spend some time around the breed you are considering, before you buy, to see if the breed causes you to have an allergic reaction.</p>
+      </div>
+    </div>
+    
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>

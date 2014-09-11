@@ -1,0 +1,38 @@
+.tab-pane{
+  display:none;
+}
+
+.tab-pane.active{
+  display:block;
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.tab-pane.transitioning {
+  display: block;
+  opacity: 0;
+  transition: opacity 2s;
+}
+ul {
+  text-align: center;
+  list-style: none;
+}
+li {
+  display:inline-block;
+  float:left;
+  margin: 0 10px;
+}
+a {
+  display: inline-block;
+  text-align: center;
+  text-decoration:none;
+  text-color:black;
+}
+a.active {
+  font-weight: bold;
+}
+
+p {
+  width: 50%;
+  margin: 0 auto;
+}
