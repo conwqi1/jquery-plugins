@@ -42,7 +42,7 @@ $.Cats.prototype.slide = function(slideDir) {
   this.$nextImage.addClass(dir +  ' active')
   setTimeout(function(){
     this.$nextImage.removeClass(dir)
-  }.bind(this), 0)
+   }.bind(this), 0)
   var that = this;
   this.$activeImage.one("transitionend", function(event){
     that.$activeImage.removeClass('active left right');

@@ -13,5 +13,12 @@ div.items img {
 
 div.items img.active {
   display: block;
-  
+}
+
+ul {
+  float: left;
+}
+li {
+  display: inline-block;
+  float:left;
 }
