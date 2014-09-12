@@ -28,8 +28,8 @@ $.Cats.prototype.getNextImage = function (integer) {
 }
 
 $.Cats.prototype.slide = function(slideDir) {
-  var dir = slideDir == 1 ? 'left' : 'right';
-  var oppDir = slideDir == -1 ? 'left' : 'right';
+  var dir = slideDir == -1 ? 'left' : 'right';
+  var oppDir = slideDir == 1 ? 'left' : 'right';
   
   //update index
   this.$activeIndex = (this.$activeIndex + slideDir + 3) % 3;
@@ -37,10 +37,12 @@ $.Cats.prototype.slide = function(slideDir) {
   //find image to display
   this.$nextImage = $(this.$images[this.$activeIndex]);
   //image to display gets dir it's sliding in and active
-  this.$nextImage.addClass('right active')
   //image to remove gets opposite direction
-  this.$activeImage.addClass('left')
-  
+  this.$activeImage.addClass(oppDir)
+  this.$nextImage.addClass(dir +  ' active')
+  setTimeout(function(){
+    this.$nextImage.removeClass(dir)
+  }.bind(this), 0)
   var that = this;
   this.$activeImage.one("transitionend", function(event){
     that.$activeImage.removeClass('active left right');
@@ -53,15 +55,11 @@ $.Cats.prototype.slide = function(slideDir) {
 }
 
 $.Cats.prototype.slideLeft = function(){
-  this.slide(1)
+  this.slide(1);
 }
 
 $.Cats.prototype.slideRight = function(){
-  console.log("slidingRight")
-  this.getNextImage(-1);
-  this.$activeImage.addClass('right');
-  this.$nextImage.addClass("left");
-  this.slide();
+  this.slide(-1);
 }
 
 $.fn.cats = function () {
