@@ -20,13 +20,12 @@ $.Tabs.prototype.clickTab = function (event) {
   //grab tab to display via the data attr of the active tab link
   $transitionToTab = $( $transitionToLink.attr("href") )
   this.$activeTabPane.one('transitionend', function(event){
-    that.$activeTabPane.removeClass("active");
-    that.$activeTabPane.removeClass("transitioning");
+    that.$activeTabPane.removeClass("active transitioning");
     $transitionToTab.removeClass("transitioning");
     $transitionToTab.addClass("active");
   });  
   // $(".tab-pane").removeClass("active");
-  this.$activeTab = $(event.currentTarget);
+  // this.$activeTab = $(event.currentTarget);
 }
 
 $.fn.tabs = function () {
